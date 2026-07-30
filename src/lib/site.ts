@@ -4,6 +4,13 @@
 export const site = {
   name: "Mummy Shalom Medical Services",
   tagline: "We Care, God Heals",
+
+  // Absolute origin. Canonicals, the sitemap, OG image URLs and the JSON-LD @id all
+  // need one, and they must all agree — so it lives here with everything else (§9).
+  // The domain is still unconfirmed (§12): set NEXT_PUBLIC_SITE_URL at launch and it
+  // swaps everywhere at once. Vercel sets it per-deployment for preview builds.
+  // No trailing slash — every consumer appends a path that starts with "/".
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mummyshalom.com",
   positioning:
     "Rehabilitation, maternity and everyday care in Ikorodu. NHIS/HMO accepted.",
 

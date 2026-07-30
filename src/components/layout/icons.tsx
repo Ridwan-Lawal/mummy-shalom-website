@@ -92,7 +92,7 @@ export function WhatsAppIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-/** Pulse line — recovery and physiotherapy. */
+/** Pulse line — recovery and rehabilitation. */
 export function ActivityIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base} {...props}>

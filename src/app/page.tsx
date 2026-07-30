@@ -49,16 +49,25 @@ const primaryPhone = site.phones[0];
 
 const services = [
   {
-    name: "Stroke rehabilitation & physiotherapy",
-    line: "Recovery after a stroke is measured in months, not days, and it usually continues long after the hospital discharges you. We provide the physiotherapy and daily nursing care that carries a patient through that stretch — whether they stay with us as an in-patient or come in for regular sessions.",
+    // Client correction: stroke rehabilitation and the arthritis group are treated
+    // through the founder's registered alternative/homeopathic practice, so they are
+    // grouped under it rather than listed separately. Physiotherapy is NOT a
+    // standalone service here — see the SERVICE RULE in CLAUDE.md §5.
+    // Stroke rehabilitation leads the sentence deliberately: it is the reason most
+    // families arrive (§1), so the words must stay findable inside the group.
+    name: "Alternative & traditional medicine",
+    line: "Our founder and lead practitioner is a practitioner registered with the Lagos State Traditional Medicine Board. Stroke rehabilitation, and the management of arthritis, osteoarthritis, osteoporosis and rheumatoid arthritis, are treated through this practice — alongside conventional treatment, and never without explanation.",
   },
   {
     name: "Maternity & safe delivery",
-    line: "Antenatal care through pregnancy, delivery, and postnatal support afterwards. Our clinic is a registered maternity home and our care is led by a certified birth attendant.",
+    line: "Antenatal care through pregnancy, delivery, and postnatal support afterwards. Our clinic is a registered maternity home, and antenatal, delivery and postnatal care are led by a Registered Nurse and Registered Midwife (RN/RM, BNSc) registered with the Nursing and Midwifery Council of Nigeria.",
   },
   {
+    // The arthritis group moved to the practice above. Which practice treats these
+    // three is still open with the client, so the question renders literally rather
+    // than being guessed — same convention as the placeholders in src/lib/site.ts.
     name: "Long-term condition management",
-    line: "Diabetes, high blood pressure, arthritis, osteoporosis and severe ulcers are managed, not fixed once. We provide the ongoing treatment, monitoring and adjustment that keeps a condition under control and daily life workable.",
+    line: "Diabetes, high blood pressure and severe ulcers are managed, not fixed once. We provide the ongoing treatment, monitoring and adjustment that keeps a condition under control and daily life workable. [CONFIRM: conventional or alternative practice?]",
   },
   {
     name: "Everyday & emergency care",
@@ -92,10 +101,10 @@ const facilities = [
 
 // Institution names as plain text — never badges, never certificate photos (§2, §8).
 const credentials = [
-  "Nursing & Midwifery Council of Nigeria — CPD certified",
-  "Community Birth Attendant — Lagos State College of Health Technology",
+  "Registered Nurse & Registered Midwife (RN/RM, BNSc) — Nursing & Midwifery Council of Nigeria",
   "Lagos State Traditional Medicine Board — registered practitioner",
   "CAC-registered since 2016",
+  "Works with doctors across the relevant areas, including a gynaecologist",
 ];
 
 const facility = [
@@ -301,11 +310,11 @@ export default function Home() {
                 </p>
                 <p>
                   Our clinic is led by {site.founderName}, its founder and lead
-                  practitioner — a nurse certified by the Nursing and Midwifery
-                  Council of Nigeria, a Community Birth Attendant trained
-                  through the Lagos State College of Health Technology, and a
-                  practitioner registered with the Lagos State Traditional
-                  Medicine Board.
+                  practitioner — a Registered Nurse and Registered Midwife
+                  (RN/RM, BNSc) with the Nursing and Midwifery Council of
+                  Nigeria, and a practitioner registered with the Lagos State
+                  Traditional Medicine Board. She leads our maternity service
+                  and is in charge of antenatal and postnatal care.
                 </p>
               </div>
 

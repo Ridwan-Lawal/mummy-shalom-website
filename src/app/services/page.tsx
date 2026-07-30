@@ -18,7 +18,9 @@ import {
   CheckIcon,
   PhoneIcon,
 } from "@/components/layout/icons";
+import { JsonLd } from "@/components/JsonLd";
 import { cn } from "@/lib/cn";
+import { breadcrumbSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 // Photos only where one honestly matches the service (§8 — no decorative filler).
@@ -34,9 +36,11 @@ import emergencyPhoto from "../../../public/06-facility-emergency-room.jpg";
 const primaryPhone = site.phones[0];
 
 export const metadata: Metadata = {
-  title: "What we care for — Mummy Shalom Medical Services",
+  // The brand suffix comes from the title template in layout.tsx.
+  title: "What we care for",
   description:
-    "Stroke rehabilitation, convalescent care, maternity and safe delivery, long-term condition management, and everyday and emergency care in Igbogbo, Ikorodu.",
+    "Stroke rehabilitation, convalescent care, maternity and safe delivery, long-term condition management, alternative and traditional medicine, and everyday and emergency care in Igbogbo, Ikorodu.",
+  alternates: { canonical: "/services" },
 };
 
 /** Practical aside closing a service section — "What to bring", "When to come". */
@@ -49,10 +53,25 @@ function Callout({ label, children }: { label: string; children: ReactNode }) {
   );
 }
 
-/** Bold label, then prose — the shape sections 4 and 6 are written in. */
-function Term({ label, children }: { label: string; children: ReactNode }) {
+/**
+ * Bold label, then prose — the shape the grouped sections are written in.
+ *
+ * `id` is optional and exists so a service that lost its own section in the
+ * regrouping can keep its anchor: Home and any existing link to
+ * #stroke-rehabilitation still land on the right paragraph. `scroll-mt` clears
+ * the sticky header so the heading isn't hidden underneath it.
+ */
+function Term({
+  id,
+  label,
+  children,
+}: {
+  id?: string;
+  label: string;
+  children: ReactNode;
+}) {
   return (
-    <div>
+    <div id={id} className={cn(id && "scroll-mt-32")}>
       <h3 className="font-medium text-foreground">{label}</h3>
       <p className="mt-1 text-foreground">{children}</p>
     </div>
@@ -116,6 +135,7 @@ function ServiceSection({
 export default function ServicesPage() {
   return (
     <main>
+      <JsonLd data={breadcrumbSchema("What we care for", "/services")} />
       {/* ---- Page header banner. No reception photo exists in the asset set — §8
            excludes the waiting-area shots — so this uses the emergency room, the one
            clinical space not already carrying a banner elsewhere. No red here (§4). ---- */}
@@ -153,24 +173,46 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      {/* ---- 1 ---- */}
+      {/* ---- 1 ----
+           Per the client, stroke rehabilitation and the arthritis group are treated
+           through the founder's registered alternative and homeopathic practice, so
+           they are grouped here as one named service rather than listed as separate
+           ones. Physiotherapy is NOT a standalone service — see the SERVICE RULE in
+           CLAUDE.md §5. The stroke Term keeps the #stroke-rehabilitation anchor so
+           existing links still resolve. Language rule holds: management, care,
+           relief and rehabilitation only. ---- */}
       <ServiceSection
-        id="stroke-rehabilitation"
-        title="Stroke rehabilitation & physiotherapy"
+        id="alternative-traditional-medicine"
+        title="Alternative & traditional medicine"
         icon={ActivityIcon}
       >
         <p className="text-lg">
-          Recovery after a stroke continues long after the hospital has done its part.
-          Patients are often discharged still unable to walk unaided or speak clearly.
+          Our founder and lead practitioner is a practitioner registered with the
+          Lagos State Traditional Medicine Board. Two of the things families most
+          often come to us for are treated through this practice, alongside
+          conventional treatment where that is what a patient needs.
         </p>
-        <p>
-          That stretch is what we do: physiotherapy and daily nursing care — relearning
-          movement, rebuilding strength and balance, and managing medication alongside
-          it. Patients can stay with us as in-patients, or come in for regular sessions
-          while living at home. We will advise which is realistic.
-        </p>
+        <div className="space-y-4 pt-1">
+          <Term id="stroke-rehabilitation" label="Stroke rehabilitation">
+            Recovery after a stroke continues long after the hospital has done its
+            part — patients are often discharged still unable to walk unaided or speak
+            clearly. That stretch is what we do: daily nursing care and therapy
+            through this practice, relearning movement, rebuilding strength and
+            balance, and managing medication alongside it. Patients can stay with us
+            as in-patients, or come in for regular sessions while living at home. We
+            will advise which is realistic.
+          </Term>
+          <Term label="Arthritis, osteoarthritis, osteoporosis and rheumatoid arthritis">
+            Treated through our alternative and homeopathic remedies — pain relief,
+            and support for keeping mobility for as long as possible. These are
+            long-term conditions: the work is management and relief, month after
+            month, not a one-off treatment.
+          </Term>
+        </div>
+        <p>Nothing is given without explanation, and you are free to ask what any remedy is and why it has been chosen.</p>
         <Callout label="What to bring">
-          The hospital discharge summary and any current medication list.
+          For a stroke patient: the hospital discharge summary and any current
+          medication list.
         </Callout>
       </ServiceSection>
 
@@ -221,9 +263,14 @@ export default function ServicesPage() {
       ---- */}
       <ServiceSection id="maternity" title="Maternity & safe delivery">
         <p>
-          We are a registered maternity home, and our maternity care is led by a
-          certified Community Birth Attendant trained through the Lagos State College
-          of Health Technology.
+          We are a registered maternity home, and antenatal, delivery and postnatal
+          care are led by a Registered Nurse and Registered Midwife (RN/RM, BNSc)
+          registered with the Nursing and Midwifery Council of Nigeria. A maternity
+          home should be led by a registered midwife — ours is.
+        </p>
+        <p>
+          We also work with doctors across the relevant areas, including a
+          gynaecologist.
         </p>
         <div className="space-y-4 pt-1">
           <Term label="Antenatal care">
@@ -255,11 +302,17 @@ export default function ServicesPage() {
         icon={ChartIcon}
       >
         <p className="text-lg">
-          Diabetes, high blood pressure, arthritis and severe ulcers are managed rather
-          than fixed once — regular monitoring, medication adjusted as the body
-          changes, and someone who knows the patient&rsquo;s history well enough to
-          notice when something shifts.
+          Diabetes, high blood pressure and severe ulcers are managed rather than fixed
+          once — regular monitoring, medication adjusted as the body changes, and
+          someone who knows the patient&rsquo;s history well enough to notice when
+          something shifts.
         </p>
+        {/* OPEN QUESTION (§12 convention): the client has confirmed that stroke
+            rehabilitation and the arthritis group are treated through the alternative
+            practice, but has not yet said which practice treats these three. It
+            renders literally rather than being guessed — an open question stays
+            visible. Remove this line once she answers. */}
+
         {/* Icon markers rather than disc bullets — this section carries no photo, so
             the list does the visual work (§8: no decorative filler). */}
         <ul className="space-y-2.5">
@@ -275,13 +328,6 @@ export default function ServicesPage() {
               once and forgotten.
             </>,
             <>
-              <span className="font-medium">
-                Arthritis, osteoarthritis, osteoporosis and rheumatoid arthritis
-              </span>{" "}
-              — pain management, physiotherapy, and support for keeping mobility for
-              as long as possible.
-            </>,
-            <>
               <span className="font-medium">Severe ulcer management</span> — treatment
               and ongoing monitoring.
             </>,
@@ -292,11 +338,6 @@ export default function ServicesPage() {
             </li>
           ))}
         </ul>
-        <p>
-          We also offer alternative and traditional therapy alongside conventional
-          treatment, registered with the Lagos State Traditional Medicine Board.
-          Nothing is given without explanation.
-        </p>
         <Callout label="What we do not promise:">
           These are long-term conditions, and we will not tell you they can be made to
           disappear. What good management does is keep a condition under control and

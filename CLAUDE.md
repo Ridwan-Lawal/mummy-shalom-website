@@ -127,7 +127,7 @@ internet photos of the clinic), and "cure" claims are prohibited.
 
 # Brand Identity — Mummy Shalom Medical Services
 
-> Clinic + convalescent home + maternity + physiotherapy/alternative therapy, Ikorodu, Lagos. FINAL v3 — all real assets catalogued, photo dos/don'ts included, imagery policy locked. Drop in as CLAUDE.md and build section by section.
+> Clinic + convalescent home + maternity + alternative/traditional medicine, Ikorodu, Lagos. FINAL v3 — all real assets catalogued, photo dos/don'ts included, imagery policy locked. Drop in as CLAUDE.md and build section by section.
 
 ---
 
@@ -138,7 +138,7 @@ internet photos of the clinic), and "cure" claims are prohibited.
 - **Location:** 10, Kingsley Omoruyi Street, Olubi Harmony Estate, Morekete Igbogbo, Ikorodu, Lagos
 - **Phones:** 08161587676 · 08123226954 (click-to-call both)
 - **Email:** mummyshalommedicalservices@gmail.com [CONFIRM primary — a second email exists on the banner]
-- **Type:** Clinic website — convalescent/rehabilitation + physiotherapy + maternity + general care
+- **Type:** Clinic website — convalescent/rehabilitation + alternative & traditional medicine + maternity + general care
 - **Positioning:** The Ikorodu clinic families trust for long-term recovery — certified care, safe deliveries, everyday medicine. NHIS/HMO accepted.
 
 ---
@@ -158,7 +158,9 @@ internet photos of the clinic), and "cure" claims are prohibited.
 
 **Signature elements:**
 1. **A named, credentialed clinical team.** The subject of this site is the CLINIC, not one person. Mummy Shalom Medical Services is who provides the care; the founder appears as **lead practitioner** with her credentials — the way any good clinic establishes clinical authority — and the nursing staff appear alongside her as a team. This answers the question a family actually asks: "who looks after my mother when the founder isn't on shift?" A one-person framing raises that question; a team framing answers it.
-2. **A real credentials band:** Nursing & Midwifery Council of Nigeria CPD · Lagos State Traditional Medicine Board · Community Birth Attendant (Lagos State College of Health Technology) · AGPNP Lagos · Lagos State registered Traditional & Alternative Medicine Practitioner · CAC-registered since 2016 · NHIS/HMO accepted. Named institutions as clean text — never vague badges, never pasted certificate photos.
+2. **A real credentials band:** Registered Nurse & Registered Midwife (RN/RM, BNSc), Nursing & Midwifery Council of Nigeria · Nursing & Midwifery Council of Nigeria CPD · Lagos State Traditional Medicine Board · AGPNP Lagos · Lagos State registered Traditional & Alternative Medicine Practitioner · CAC-registered since 2016 · NHIS/HMO accepted · works with doctors across the relevant areas, including a gynaecologist. Named institutions as clean text — never vague badges, never pasted certificate photos.
+
+   **CREDENTIAL RULE: "Community Birth Attendant" must NOT appear anywhere on the site.** The client has removed it. The clinic's maternity credential is RN/RM (BNSc) with the Nursing & Midwifery Council of Nigeria — a maternity home must be led by a registered midwife, and this one is. Do not reintroduce the Lagos State College of Health Technology birth-attendant line from any earlier draft of this brief.
 3. **Dual-action module:** "Call us" (urgent) + "Ask about care" (primary) — care-inquiry weighted, urgent path unmissable.
 
 **A small new clinic looking professional — the principle:** professionalism comes from PRESENTATION of real assets (consistent photo treatment, calm layout, named credentials, plain confident copy, fast load) — never from borrowed imagery. Honest and considered beats padded and glossy.
@@ -213,22 +215,29 @@ The palette comes from the logo itself — measured from the extracted seal — 
    - Photo: /images/01-hero-mummy-shalom-desk.jpg, hairline frame, right side. Left-aligned layout, never centered.
 
    **Readability rule:** the headline and the capability line are foreground text at full contrast — NOT the muted token. §3 targets older and stressed readers; the most important sentence on the page must not be the lightest element.
-2. **Services overview:** cards for the main service groups (stroke rehab & physiotherapy · maternity & delivery · chronic condition management · general & everyday care) — each links to /services.
-3. **Care you can trust (clinic-level):** registered since 2016 · NHIS/HMO accepted · qualified nursing and midwifery staff · in-patient convalescent care. The founder/lead practitioner is named here with her key credentials as part of the CLINIC's credibility — not as a personal profile. Voice is "we / our team / our clinic." → "About our clinic" link to /about.
+2. **Services overview:** cards for the main service groups (alternative & traditional medicine — which covers stroke rehabilitation and the arthritis group · maternity & delivery · chronic condition management · general & everyday care) — each links to /services. Stroke rehabilitation must stay findable in the card copy even though it no longer has a card of its own: it is why most families arrive (§1).
+3. **Care you can trust (clinic-level):** registered since 2016 · NHIS/HMO accepted · qualified nursing and midwifery staff · midwife-led maternity (RN/RM, BNSc) · works with doctors including a gynaecologist · in-patient convalescent care. The founder/lead practitioner is named here with her key credentials as part of the CLINIC's credibility — not as a personal profile. Voice is "we / our team / our clinic." → "About our clinic" link to /about.
 4. **Why families choose us:** NHIS/HMO · CAC since 2016 · [X years — CONFIRM] · in-patient care.
 5. **Facility glimpse:** small 3-photo strip (06, 07, 08).
 A visitor who never clicks anything must still be convinced by Home alone.
 
 ### `/services` — What we care for (in depth)
 Each service as a rich section with a plain-language paragraph (what it is, who it's for, how the clinic helps):
-- Stroke rehabilitation — physiotherapy & nursing care through recovery
+- **Alternative & traditional medicine** (founder is a practitioner registered with the Lagos State Traditional Medicine Board) — the named service, and the practice through which the next two are delivered:
+  - Stroke rehabilitation — nursing care & therapy through recovery
+  - Arthritis, osteoarthritis, osteoporosis & rheumatoid arthritis — pain relief and mobility support, via alternative/homeopathic remedies
 - Convalescent / long-term care
-- Maternity & safe delivery (certified birth attendant)
-- Osteoarthritis, osteoporosis & rheumatoid arthritis care
-- Diabetes management · Hypertension management · Ulcer care
+- Maternity & safe delivery — antenatal, delivery & postnatal care led by a Registered Nurse & Registered Midwife (RN/RM, BNSc), Nursing & Midwifery Council of Nigeria
+- Diabetes management · Hypertension management · Ulcer care — **[CONFIRM: conventional or alternative practice?]** pending the client's answer; the marker renders literally on the page until she confirms
 - General illness & everyday medicine
-- Alternative & traditional therapy (registered practitioner)
-**LANGUAGE RULE: management/care/rehabilitation — NEVER "cure."**
+**LANGUAGE RULE: management/care/relief/rehabilitation — NEVER "cure."**
+
+**SERVICE RULE: physiotherapy is NOT a standalone service at this clinic.** Recovery
+work is nursing care and therapy delivered through the alternative/traditional medicine
+practice. Never list physiotherapy as its own service, in a section heading, or in a
+card title — and never re-file the arthritis group under conventional long-term
+condition management. This corrects an earlier version of this brief; the client was
+explicit about it.
 (Phase 2 option: individual service sub-pages for local SEO.)
 
 ### `/about` — Our clinic & team

@@ -12,6 +12,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Button, Card, Container, Frame, Heading, Section } from "@/components/ui";
 import { CheckIcon } from "@/components/layout/icons";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 // Decorative banner backdrop — the overlaid heading carries the meaning, so it takes
@@ -38,9 +40,11 @@ import facilityEntrance from "../../../public/08-facility-entrance-CROPPED.jpg";
 const primaryPhone = site.phones[0];
 
 export const metadata: Metadata = {
-  title: "About our clinic — Mummy Shalom Medical Services",
+  // The brand suffix comes from the title template in layout.tsx.
+  title: "About our clinic",
   description:
     "A registered clinic, maternity home and convalescent centre in Igbogbo, Ikorodu, serving the community since 2016. Our team, our values and our facility.",
+  alternates: { canonical: "/about" },
 };
 
 const values = [
@@ -63,11 +67,12 @@ const goals = [
 
 // Named institutions as clean text — never badges, never certificate photos (§2, §8).
 const credentials = [
+  "Registered Nurse & Registered Midwife (RN/RM, BNSc) — Nursing & Midwifery Council of Nigeria",
   "Nursing & Midwifery Council of Nigeria — Continuing Professional Development certified",
-  "Community Birth Attendant — Lagos State College of Health Technology",
   "Lagos State Traditional Medicine Board — registered practitioner",
   "Association of General Private Nursing Practitioners, Lagos State Chapter",
   "CAC-registered business since 2016",
+  "Works with doctors across the relevant areas, including a gynaecologist",
 ];
 
 
@@ -92,6 +97,7 @@ const facility = [
 export default function AboutPage() {
   return (
     <main>
+      <JsonLd data={breadcrumbSchema("About our clinic", "/about")} />
       {/* ---- Page header banner. Teal overlay at 70% carries white text over the
            photo; no red anywhere here — red belongs to the call block only (§4). ---- */}
       <section className="relative h-[200px] overflow-hidden lg:h-[320px]">
@@ -144,8 +150,8 @@ export default function AboutPage() {
             <p>
               That means we have in-patient beds for people who cannot yet go home
               safely — patients recovering from a stroke, from surgery, or from a long
-              illness. It means our physiotherapy and nursing care is set up to
-              continue week after week rather than end at discharge. And it means the
+              illness. It means our nursing care and therapy is set up to continue
+              week after week rather than end at discharge. And it means the
               people who work here know the patients by name, because the same patients
               come back, or stay.
             </p>
@@ -272,11 +278,11 @@ export default function AboutPage() {
                 <p className="text-sm text-primary">Founder &amp; Lead Practitioner</p>
               </div>
               <p className="text-foreground">
-                A nurse certified by the Nursing and Midwifery Council of Nigeria, a
-                Community Birth Attendant trained through the Lagos State College of
-                Health Technology and the Lagos State Primary Health Care Board, and a
-                practitioner registered with the Lagos State Traditional Medicine
-                Board. She founded the clinic in 2016 and continues to practise here.
+                A Registered Nurse and Registered Midwife (RN/RM, BNSc) with the
+                Nursing and Midwifery Council of Nigeria, and a practitioner
+                registered with the Lagos State Traditional Medicine Board. She leads
+                our maternity service and is in charge of antenatal and postnatal
+                care. She founded the clinic in 2016 and continues to practise here.
               </p>
             </li>
 
@@ -308,8 +314,8 @@ export default function AboutPage() {
               </div>
               <p className="max-w-2xl text-foreground">
                 Our nurses handle the daily work that recovery actually depends on:
-                medication, monitoring, physiotherapy sessions, and the hourly
-                attention that in-patient care requires.
+                medication, monitoring, therapy sessions, and the hourly attention
+                that in-patient care requires.
               </p>
             </li>
           </ul>
@@ -364,9 +370,13 @@ export default function AboutPage() {
           <div className="max-w-3xl space-y-4">
             <Heading as="h2">Maternity care</Heading>
             <p className="text-foreground">
-              We are a registered maternity home. Mothers who come to us for antenatal
-              care are looked after by staff who know them by the time labour comes,
-              rather than meeting them for the first time that night.
+              We are a registered maternity home, and antenatal, delivery and
+              postnatal care are led by a Registered Nurse and Registered Midwife
+              (RN/RM, BNSc) registered with the Nursing and Midwifery Council of
+              Nigeria. A maternity home should be led by a registered midwife —
+              ours is. Mothers who come to us for antenatal care are looked after by
+              staff who know them by the time labour comes, rather than meeting them
+              for the first time that night.
             </p>
           </div>
         </Container>

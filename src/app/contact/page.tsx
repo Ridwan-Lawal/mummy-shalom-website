@@ -22,6 +22,8 @@ import {
 } from "@/components/layout/icons";
 import { CareInquiryForm } from "@/components/forms/CareInquiryForm";
 import { MapEmbed } from "@/components/MapEmbed";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 // Decorative banner backdrop — the overlaid text carries the meaning, so the image
@@ -29,8 +31,10 @@ import { site } from "@/lib/site";
 import bannerImage from "../../../public/07-facility-corridor.jpg";
 
 export const metadata: Metadata = {
-  title: `Reach us — ${site.name}`,
+  // The brand suffix comes from the title template in layout.tsx.
+  title: "Reach us",
   description: `Call the clinic on either number, message us, or send a care inquiry. We are on ${site.address.street}, ${site.address.short}.`,
+  alternates: { canonical: "/contact" },
 };
 
 // Returns null unless site.whatsapp holds a real number, so a placeholder can never
@@ -100,6 +104,7 @@ const contactStrip: { Icon: typeof MapPinIcon; title: string; detail: ReactNode 
 export default function ContactPage() {
   return (
     <main>
+      <JsonLd data={breadcrumbSchema("Reach us", "/contact")} />
       {/* ---- Page header banner. Teal overlay at 65% carries white text over the
            photo; no red anywhere here — red belongs to the call block only (§4). ---- */}
       <section className="relative h-[180px] overflow-hidden lg:h-[280px]">

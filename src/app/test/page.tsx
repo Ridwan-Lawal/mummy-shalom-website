@@ -1,6 +1,15 @@
 // TEMPORARY token-verification page — delete before launch. Route: /test
 // Renders every brand color token, the type scale, and both font stacks so we
 // can confirm the @theme tokens in globals.css actually resolve to utilities.
+import type { Metadata } from "next";
+
+// Until this route is deleted it is publicly routable, so keep it out of the index.
+// robots.ts disallows it too; this is the belt-and-braces half, because a page that
+// is already indexed must be crawlable to see the noindex and be dropped.
+export const metadata: Metadata = {
+  title: "Token check (internal)",
+  robots: { index: false, follow: false },
+};
 
 type Swatch = { name: string; hex: string; className: string; note?: string };
 

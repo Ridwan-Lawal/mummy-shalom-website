@@ -1,4 +1,6 @@
 // Review page for UI primitives — labeled, not real page sections. Route: /styleguide
+// TEMPORARY — delete before launch.
+import type { Metadata } from "next";
 import {
   Button,
   Card,
@@ -8,6 +10,13 @@ import {
   Section,
 } from "@/components/ui";
 import type { ReactNode } from "react";
+
+// Publicly routable until deleted — keep it out of the index (see /test for why
+// both this and the robots.ts disallow are needed).
+export const metadata: Metadata = {
+  title: "UI primitives (internal)",
+  robots: { index: false, follow: false },
+};
 
 function Row({ label, children }: { label: string; children: ReactNode }) {
   return (
@@ -78,7 +87,7 @@ export default function StyleguidePage() {
               <Card>
                 <Heading as="h4">Stroke rehabilitation</Heading>
                 <p className="mt-2 text-muted">
-                  Physiotherapy and nursing through recovery, in-patient where needed.
+                  Nursing care and therapy through recovery, in-patient where needed.
                 </p>
               </Card>
               <Card>
