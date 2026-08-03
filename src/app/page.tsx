@@ -248,6 +248,20 @@ export default function Home() {
               </li>
             ))}
           </ul>
+
+          {/* The clinic's separate complementary/traditional practice (client
+              request). A single line rather than a fifth card, so it reads as
+              adjacent to the four medical services rather than one of them.
+              Deep-links to the band on /services. */}
+          <p className="mt-8">
+            <Link
+              href="/services#complementary-therapy"
+              className="inline-flex items-center gap-1.5 font-medium text-primary transition-colors duration-150 hover:text-foreground"
+            >
+              We also run a separate complementary and traditional therapy practice
+              <ArrowRightIcon className="h-4 w-4 shrink-0" />
+            </Link>
+          </p>
         </Container>
       </Section>
 

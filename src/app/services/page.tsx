@@ -8,6 +8,11 @@
 // Ground: every service section stays on `background` and is separated by a hairline,
 // rather than alternating with `surface`. The callouts are white Cards, and a white
 // card on a white band would disappear.
+//
+// ONE EXCEPTION: the "Shalom Complementary, Alternative & Homeopathic Therapy" band
+// near the bottom is `surface` on purpose. The client asked for that practice to read
+// as separate from the clinic's medical services, so it breaks the rhythm deliberately.
+// It carries no Card, so nothing disappears. Do not normalise it back to `background`.
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image, { type StaticImageData } from "next/image";
@@ -34,6 +39,24 @@ import emergencyPhoto from "../../../public/06-facility-emergency-room.jpg";
 // import maternityPhoto from "../../../public/05-maternity-PENDING-CONSENT.jpg";
 
 const primaryPhone = site.phones[0];
+
+// What patients bring to the separate complementary/traditional practice — client-
+// supplied copy, verbatim. These are presentations people ARRIVE with, not outcomes
+// the practice claims: do not reword them, do not add timeframes or success rates,
+// and do not mark them with check icons (a tick reads as "we fix this"). The closing
+// paragraph is required and must stay — it is what keeps the block honest (§9, §10).
+const therapyConcerns = [
+  "Stroke — rehabilitation and recovery care",
+  "Osteoarthritis, osteoporosis and rheumatoid arthritis",
+  "Severe hypertension",
+  "Diabetes mellitus",
+  "Fibroids",
+  "Fertility concerns, including low sperm count",
+  "Hormonal imbalance and hyperprolactinaemia",
+  "Weight management",
+  "Ear wax removal",
+  "Traditional and spiritual remedies",
+];
 
 export const metadata: Metadata = {
   // The brand suffix comes from the title template in layout.tsx.
@@ -378,6 +401,56 @@ export default function ServicesPage() {
           </Term>
         </div>
       </ServiceSection>
+
+      {/* ---- 6. The separate practice (client request) ----
+           Deliberately NOT a ServiceSection: the client asked for this to read as a
+           distinct practice rather than another item in the clinic's service list, so
+           it breaks the page's rhythm on purpose — `surface` ground plus a hairline
+           rule top and bottom. That is the one sanctioned exception to the
+           all-sections-on-`background` rule noted at the top of this file; it is safe
+           here because this block carries no white Card to disappear against.
+           No urgent red (§4) — red belongs to the call block alone. ---- */}
+      <Section
+        id="complementary-therapy"
+        surface
+        className="scroll-mt-32 border-y border-hairline"
+      >
+        <Container>
+          <div className="max-w-3xl">
+            <Heading as="h2">
+              Shalom Complementary, Alternative &amp; Homeopathic Therapy
+            </Heading>
+            {/* Subheading stays muted and small — it is the one line here that is
+                meant to recede. Everything below it is foreground (§3). */}
+            <p className="mt-3 text-sm text-muted">
+              A separate practice at {site.name}, run by a practitioner registered
+              with the Lagos State Traditional Medicine Board.
+            </p>
+
+            <p className="mt-6 text-foreground">
+              Alongside the clinic&rsquo;s medical services, we offer complementary
+              and traditional therapy. Patients come to this practice with:
+            </p>
+
+            {/* Hairline-ruled cells: the 1px gaps let the `hairline` token show
+                through as the rules, so the list is bordered and flat with no
+                shadow (§6) and no bullet glyph implying an outcome. */}
+            <ul className="mt-6 grid gap-px overflow-hidden rounded-lg border border-hairline bg-hairline sm:grid-cols-2">
+              {therapyConcerns.map((concern) => (
+                <li key={concern} className="bg-surface px-4 py-3 text-foreground">
+                  {concern}
+                </li>
+              ))}
+            </ul>
+
+            <p className="mt-6 text-foreground">
+              Come and talk to us about your situation. We will explain what this
+              practice can and cannot do for it, and where conventional medical care
+              is the better route we will say so.
+            </p>
+          </div>
+        </Container>
+      </Section>
 
       {/* ---- Closing section. Replaces the shared ContactCTA on this route
            (suppressed in ContactCTA.tsx) so the page ends with one band. ---- */}

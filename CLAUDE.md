@@ -232,6 +232,33 @@ Each service as a rich section with a plain-language paragraph (what it is, who 
 - General illness & everyday medicine
 **LANGUAGE RULE: management/care/relief/rehabilitation — NEVER "cure."**
 
+**THE SEPARATE PRACTICE — "Shalom Complementary, Alternative & Homeopathic Therapy."**
+The client asked for this to appear on `/services` as its own block, after the medical
+services and clearly delineated from them (its own heading, `surface` ground, hairline
+rule top and bottom) so it reads as a **distinct practice, not a fifth clinic service**.
+It is rendered as a plain `Section`, deliberately not a `ServiceSection`. Home carries
+one line under the services overview linking to it (`/services#complementary-therapy`).
+
+Its copy is client-supplied and is used **verbatim** — heading, muted subheading
+("A separate practice at Mummy Shalom Medical Services, run by a practitioner
+registered with the Lagos State Traditional Medicine Board"), intro, the ten-item list,
+and the closing paragraph. Rules that apply to it:
+- **Do not reword the list items.** They are presentations patients ARRIVE with, not
+  outcomes the practice claims — the distinction is what keeps the block compliant.
+- **Add no treatment promises, success claims or timeframes**, and never "cure" (the
+  LANGUAGE RULE above applies here in full).
+- **Do not mark the list with check icons** — a tick reads as "we fix this." Hairline
+  rules only.
+- **The closing paragraph is required and must not be dropped.** It is the block's
+  honesty clause: it says what the practice can and cannot do and points to
+  conventional care where that is the better route.
+- No urgent red anywhere in the block (§4).
+
+Note the overlap this creates with the **Alternative & traditional medicine** section
+above: stroke, the arthritis group, hypertension and diabetes appear in both. That is
+the client's instruction, not an error — but if she later asks to de-duplicate, the
+question to put to her is which of the two blocks owns each condition.
+
 **SERVICE RULE: physiotherapy is NOT a standalone service at this clinic.** Recovery
 work is nursing care and therapy delivered through the alternative/traditional medicine
 practice. Never list physiotherapy as its own service, in a section heading, or in a
