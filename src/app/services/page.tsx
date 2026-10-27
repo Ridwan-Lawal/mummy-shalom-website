@@ -189,7 +189,8 @@ export default function ServicesPage() {
             </Heading>
             <p className="text-lg text-foreground">
               We are a clinic, maternity home and convalescent centre in{" "}
-              {site.address.short}. If your situation isn&rsquo;t described below, call
+              {site.address.short}, accredited by HEFAMAA (Health Facility Monitoring
+              and Accreditation Agency). If your situation isn&rsquo;t described below, call
               and ask — we will tell you honestly whether we are the right place for it.
             </p>
           </div>

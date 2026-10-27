@@ -101,6 +101,7 @@ const facilities = [
 
 // Institution names as plain text — never badges, never certificate photos (§2, §8).
 const credentials = [
+  "Accredited by HEFAMAA (Health Facility Monitoring and Accreditation Agency)",
   "Registered Nurse & Registered Midwife (RN/RM, BNSc) — Nursing & Midwifery Council of Nigeria",
   "Lagos State Traditional Medicine Board — registered practitioner",
   "CAC-registered since 2016",
@@ -313,7 +314,7 @@ export default function Home() {
             <div className="space-y-5">
               <Eyebrow>Care you can trust</Eyebrow>
               <Heading as="h2">
-                A registered clinic, run by qualified people
+                A HEFAMAA-accredited clinic, run by qualified people
               </Heading>
               <div className="space-y-3 text-foreground">
                 <p>
